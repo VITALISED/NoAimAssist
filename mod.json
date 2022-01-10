@@ -1,0 +1,22 @@
+{
+	"Name": "VITALISED.NoAimAssist",
+	"Description": "Gone, reduced to atoms",
+	"Version": "1.0.0",
+	"LoadPriority": 0,
+    "Scripts": [
+		{
+			"Path": "gamemodes/sh_riff_noaimassist.gnut",
+			"RunOn": "( CLIENT || SERVER ) && MP",
+			"ClientCallback": {
+				"After": "Riff_NoAAInit"
+			},
+			
+			"ServerCallback": {
+				"After": "Riff_NoAAInit"
+			}
+		},
+    ],
+    "Localisation": [
+		"resource/noaa_%language%.txt"
+	]
+}

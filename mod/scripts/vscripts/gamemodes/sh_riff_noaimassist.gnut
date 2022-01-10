@@ -1,0 +1,28 @@
+global function Riff_NoAAInit
+
+void function Riff_NoAAInit()
+{
+	AddPrivateMatchModeSettingEnum( "#MODE_SETTING_CATEGORY_RIFF", "riff_noaa", [ "#SETTING_DISABLED", "#SETTING_ENABLED" ], "0" )
+	
+	#if SERVER
+	if ( GetCurrentPlaylistVarInt( "riff_noaa", 0 ) == 0 )
+		return
+	
+	AddCallback_OnPlayerRespawned( BeginNoAA )
+    AddCallback_OnPilotBecomesTitan( BeginNoAATwo )
+    AddCallback_OnTitanBecomesPilot( BeginNoAATwo )
+	#endif
+}
+
+#if SERVER
+void function BeginNoAA( entity player )
+{
+	player.SetAimAssistAllowed( false )
+}
+
+void function BeginNoAATwo( entity player, entity titan )
+{
+	player.SetAimAssistAllowed( false )
+	titan.SetAimAssistAllowed( false )
+}
+#endif
