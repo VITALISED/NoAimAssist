@@ -1,0 +1,7 @@
+{
+    "name": "No Aim-Assist",
+    "description": "Server-side disables controller aim-assist",
+    "version_number": "1.0.0",
+    "dependencies": [],
+    "website_url": "https://github.com/VITALISED/NoAimAssist"
+}
