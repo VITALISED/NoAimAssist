@@ -1,5 +1,5 @@
 {
-    "name": "No Aim-Assist",
+    "name": "NoAimAssist",
     "description": "Server-side disables controller aim-assist",
     "version_number": "1.0.0",
     "dependencies": [],
